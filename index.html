@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html2canvas</title>
+	<script src="html2canvas.js" type="text/javascript"></script>
+	<script src="jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		function screenshot()
+		{
+			html2canvas($('#captureimage'),{
+               onrendered: function(canvas){
+               	$('#imageduplicate').html("");
+               	$('#imageduplicate').append(canvas);
+               }
+			});
+		}
+	</script>
+	<div>
+	<div id="captureimage" style="outline: 2px solid black; display: inline-block;">
+	<img src="1.png">
+</div>
+
+<div id="imageduplicate" style="outline:2px solid black; display: inline-block;">
+</div>
+</div>
+<hr>
+<a href="javascript:screenshot()" style="text-decoration: none; outline: 3px solid black; background-color: green; color: white; font-size: 25px; margin-left: 2%;">Capture ScreenShot</a>
+</body>
+</html>
